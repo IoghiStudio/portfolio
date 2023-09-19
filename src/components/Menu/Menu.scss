@@ -4,5 +4,53 @@
 .menu {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 16px;
+  height: 100%;
+  width: 120px;
+  background-color: $dark;
   
+
+  &__logo {
+
+  }
+
+  &__pages {
+    display: flex;
+    flex-direction: column;
+
+    &-item {
+
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+
+    &-icon {
+      @include square(34px);
+      @include icon;
+      cursor: pointer;
+      transition: background-image 300ms;
+      
+      &--linkedin {
+        margin-bottom: 20px;
+        background-image: url('../../media/icons/linkedin-gray.svg');
+        
+        &:hover {
+          background-image: url('../../media/icons/linkedin-purple.svg');
+        }
+      }
+      
+      &--github {
+        background-image: url('../../media/icons/github-gray.svg');
+        
+        &:hover {
+          background-image: url('../../media/icons/github-purple.svg');
+        }
+      }
+    }
+  }
 }

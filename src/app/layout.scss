@@ -1,0 +1,26 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.main-layout {
+  background-color: $black;
+  color: #fff;
+
+  &__header {
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &__main {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  &__sidebar {
+    display: none;
+
+    @include onLaptop {
+      display: flex;
+    }
+  }
+}
