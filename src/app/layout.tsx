@@ -1,9 +1,9 @@
-"use client";
 import '@/styles/globals.css';
 import cn from 'classnames';
 import type { Metadata } from 'next';
 import { Open_Sans, Montserrat } from 'next/font/google';
 import { AppContextProvider } from '@/context/store';
+import { Header } from '@/components/Header';
 
 const opensans = Open_Sans({
   subsets: ["latin"],
@@ -33,8 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn([opensans.variable], [monserrat.variable])}>
       <AppContextProvider>
-        <body>
-          <main>
+        <body className='main-layout'>
+          <div className="main-layout__header">
+            <Header />
+          </div>
+
+          <main className='main-layout__main'>
             {children}
           </main>
         </body>

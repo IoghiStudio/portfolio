@@ -21,7 +21,7 @@ const AppContext = createContext<ContextProps>({
 export const useAppContext = () => useContext(AppContext);
 
 export const AppContextProvider = ({ children } : { children: ReactNode}) => {
-  const [myName, setMyName] = useState<string>('');
+  const [myName, setMyName] = useState<string>('Denisa');
 
   return (
     <AppContext.Provider 
