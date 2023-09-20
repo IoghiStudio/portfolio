@@ -1,6 +1,9 @@
+"use client";
 import Link from 'next/link';
 import './Menu.scss';
 import cn from 'classnames';
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 enum SocialLinks {
   Linkedin = 'https://www.linkedin.com/in/nicusor-iorga/',
@@ -10,6 +13,7 @@ enum SocialLinks {
 interface RouteData {
   id: number;
   name: string;
+  routePath: string;
   path: string;
 };
 
@@ -17,27 +21,32 @@ const routesData: RouteData[] = [
   {
     id: 1,
     name: 'Home',
-    path: '/home/'
+    routePath: '/home/',
+    path: 'home'
   },
   {
     id: 2,
     name: 'About',
-    path: '/about/'
+    routePath: '/about/',
+    path: 'about'
   },
   {
     id: 3,
     name: 'Portfolio',
-    path: '/portfolio/'
+    routePath: '/portfolio/',
+    path: 'portfolio'
   },
   {
     id: 4,
     name: 'Blog',
-    path: '/blog/'
+    routePath: '/blog/',
+    path: 'blog'
   },
   {
     id: 5,
     name: 'Contact',
-    path: '/contact/'
+    routePath: '/contact/',
+    path: 'contact'
   },
 ]
 
@@ -48,6 +57,17 @@ type Props = {
 export const Menu: React.FC<Props> = ({ 
   forSidebar=false
 }) => {
+  const [pathName, setPathName] = useState<string | null>(null);
+
+  const pathname: string = usePathname();
+  const selectedRouteArr: string[] = pathname.split('/');
+  const selectedPath: string = selectedRouteArr[selectedRouteArr.length - 1];
+
+  useEffect(() => {
+    setPathName(selectedPath);
+  })
+
+  
   return (
     <div className="menu">
       <div className="menu__logo">
@@ -59,14 +79,20 @@ export const Menu: React.FC<Props> = ({
           const {
             id,
             name,
+            routePath,
             path,
           } = route;
 
           return (
             <Link
               key={id} 
-              href={path}
-              className="menu__page-item"
+              href={routePath}
+              className={cn(
+                "menu__pages-item",
+                {
+                  "menu__pages-item--active": pathName === path
+                }
+              )}
             >
               {name}
             </Link>

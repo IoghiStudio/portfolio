@@ -16,6 +16,19 @@
     min-height: 100vh;
   }
 
+  &__children {
+    width: 100%;
+    padding: 16px;
+
+    @include onTablet {
+      padding: 24px;
+    }
+
+    @include onDesktop {
+      padding: 32px;
+    }
+  }
+
   &__sidebar {
     display: none;
 

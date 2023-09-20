@@ -1,4 +1,4 @@
-import '@/styles/globals.css';
+import '@/styles/globals.scss';
 import './layout.scss';
 import cn from 'classnames';
 import type { Metadata } from 'next';
