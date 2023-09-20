@@ -1,10 +1,12 @@
+"use client";
 import '@/styles/globals.scss';
 import './layout.scss';
 import cn from 'classnames';
 import type { Metadata } from 'next';
 import { Open_Sans, Montserrat } from 'next/font/google';
-import { AppContextProvider } from '@/context/store';
+import { AppContextProvider, useAppContext } from '@/context/store';
 import { Header } from '@/components/Header';
+import { Nav } from '@/components/Nav';
 import { Menu } from '@/components/Menu';
 
 const opensans = Open_Sans({
@@ -21,17 +23,15 @@ const monserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-
-export const metadata: Metadata = {
-  title: 'Nicusor Iorga',
-  description: 'Best portfolio website made by Nicusor Iorga',
-}
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const {
+    isMenuOpened
+  } = useAppContext();
+
   return (
     <html lang="en" className={cn([opensans.variable], [monserrat.variable])}>
       <AppContextProvider>
@@ -42,7 +42,7 @@ export default function RootLayout({
 
           <main className='main-layout__main'>
             <div className="main-layout__sidebar">
-              <Menu 
+              <Nav
                 forSidebar={true}
               />
             </div>
@@ -50,6 +50,8 @@ export default function RootLayout({
             <div className="main-layout__children">
               {children}
             </div>
+
+            <Menu />
           </main>
         </body>
       </AppContextProvider>

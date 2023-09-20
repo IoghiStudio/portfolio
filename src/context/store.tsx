@@ -10,24 +10,31 @@ import {
 
 interface ContextProps {
   myName: string;
+  isMenuOpened: boolean;
   setMyName: Dispatch<SetStateAction<string>>;
+  setIsMenuOpened: Dispatch<SetStateAction<boolean>>;
 };
 
 const AppContext = createContext<ContextProps>({
   myName: '',
-  setMyName: () => {}
+  isMenuOpened: false,
+  setMyName: () => {},
+  setIsMenuOpened: () => {}
 });
 
 export const useAppContext = () => useContext(AppContext);
 
 export const AppContextProvider = ({ children } : { children: ReactNode}) => {
   const [myName, setMyName] = useState<string>('Denisa');
+  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(true);
 
   return (
     <AppContext.Provider 
       value={{
         myName,
+        isMenuOpened,
         setMyName,
+        setIsMenuOpened
       }}
     >
       {children}

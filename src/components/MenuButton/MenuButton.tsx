@@ -4,7 +4,7 @@ import './MenuButton.scss';
 import cn from 'classnames';
 
 type Props = {
-  
+
 }
 
 export const MenuButton: React.FC<Props> = () => {
@@ -13,7 +13,9 @@ export const MenuButton: React.FC<Props> = () => {
   
   return (
     <div
-      className="menu-button"
+      className={cn(
+        "menu-button",
+      )}
       onMouseEnter={() => setOnHover(true)}
       onMouseLeave={() => setOnHover(false)}
       onClick={() => setIsActive(!isActive)}

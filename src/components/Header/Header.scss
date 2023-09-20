@@ -8,7 +8,8 @@
   width: 100%;
   height: 100px;
   padding: 0 16px;
-  border-bottom: 1px solid $white-gray;
+  background-color: $dark;
+  border-bottom: 1px solid $gray;
 
   @include onTabletSmall {
     padding: 0 26px;
