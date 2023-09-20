@@ -26,7 +26,7 @@ export const useAppContext = () => useContext(AppContext);
 
 export const AppContextProvider = ({ children } : { children: ReactNode}) => {
   const [myName, setMyName] = useState<string>('Denisa');
-  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(true);
+  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
   return (
     <AppContext.Provider 
