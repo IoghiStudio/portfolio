@@ -1,9 +1,14 @@
 "use client";
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 const Page = () => {
   const router = useRouter();
-  router.push('/home');
+
+  useEffect(() => {
+    router.push('/home');
+  }, []); 
+
   return null;
 };
 

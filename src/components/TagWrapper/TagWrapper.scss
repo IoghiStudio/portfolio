@@ -44,28 +44,28 @@
   &--body {
     &::before {
       content: "<body>";
-      top: 24px;
-      left: 16px;
+      top: 36px;
+      left: 40px;
     }
 
     &::after {
       content: "</body>";
-      bottom: 24px;
-      left: 16px;
+      bottom: 36px;
+      left: 40px;
     }
   }
 
   &--html {
     &::before {
       content: "<html>";
-      top: 6px;
-      left: 16px;
+      top: 10px;
+      left: 20px;
     }
 
     &::after {
       content: "</html>";
-      bottom: 6px;
-      left: 16px;
+      bottom: 10px;
+      left: 20px;
     }
   }
 
