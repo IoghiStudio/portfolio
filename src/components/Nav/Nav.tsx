@@ -4,6 +4,7 @@ import './Nav.scss';
 import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { useAppContext } from '@/context/store';
 
 enum SocialLinks {
   Linkedin = 'https://www.linkedin.com/in/nicusor-iorga/',
@@ -48,7 +49,7 @@ const routesData: RouteData[] = [
     routePath: '/contact/',
     path: 'contact'
   },
-]
+];
 
 type Props = {
   forSidebar?: boolean;
@@ -58,6 +59,9 @@ export const Nav: React.FC<Props> = ({
   forSidebar=false
 }) => {
   const [pathName, setPathName] = useState<string | null>(null);
+  const {
+    setIsMenuOpened
+  } = useAppContext();
 
   const pathname: string = usePathname();
   const selectedRouteArr: string[] = pathname.split('/');
@@ -87,6 +91,7 @@ export const Nav: React.FC<Props> = ({
             <Link
               key={id} 
               href={routePath}
+              onClick={() => setIsMenuOpened(false)}
               className={cn(
                 "nav__pages-item",
                 {

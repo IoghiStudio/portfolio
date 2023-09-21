@@ -1,0 +1,15 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.home {
+  display: flex;
+  justify-content: space-between;
+
+  &__image {
+    width: 200px;
+    height: 324px;
+    @include icon;
+    background-size: cover;
+    background-image: url('../../media/img/profile.jpg');
+  }
+}
