@@ -75,7 +75,15 @@ export const Nav: React.FC<Props> = ({
   return (
     <div className="nav">
       <div className="nav__logo">
+        <div className="nav__logo-img"/>
 
+        <div className="nav__logo-name">
+          Nicu
+        </div>
+
+        <div className="nav__logo-text">
+          Web Developer
+        </div>
       </div>
 
       <div className="nav__pages">

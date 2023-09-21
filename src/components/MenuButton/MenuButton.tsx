@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './MenuButton.scss';
 import cn from 'classnames';
+import { useAppContext } from '@/context/store';
 
 type Props = {
 
@@ -9,7 +10,11 @@ type Props = {
 
 export const MenuButton: React.FC<Props> = () => {
   const [onHover, setOnHover] = useState<boolean>(false);
-  const [isActive, setIsActive] = useState<boolean>(false);
+
+  const {
+    isMenuOpened,
+    setIsMenuOpened
+  } = useAppContext();
   
   return (
     <div
@@ -18,13 +23,13 @@ export const MenuButton: React.FC<Props> = () => {
       )}
       onMouseEnter={() => setOnHover(true)}
       onMouseLeave={() => setOnHover(false)}
-      onClick={() => setIsActive(!isActive)}
+      onClick={() => setIsMenuOpened(!isMenuOpened)}
     >
       <div className={cn(
         "menu-button__line",
         {
           "menu-button__line--hover": onHover,
-          "menu-button__line--active-1": isActive,
+          "menu-button__line--active-1": isMenuOpened,
         }
       )}/>
 
@@ -33,7 +38,7 @@ export const MenuButton: React.FC<Props> = () => {
         "menu-button__line--2",
         {
           "menu-button__line--hover": onHover,
-          "menu-button__line--active-2": isActive,
+          "menu-button__line--active-2": isMenuOpened,
         }
       )}/>
 
@@ -41,9 +46,9 @@ export const MenuButton: React.FC<Props> = () => {
         "menu-button__line",
         {
           "menu-button__line--hover": onHover,
-          "menu-button__line--active-3": isActive,
+          "menu-button__line--active-3": isMenuOpened,
         }
       )}/>
     </div>
   )
-}
+};

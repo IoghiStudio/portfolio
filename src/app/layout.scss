@@ -4,6 +4,7 @@
 .main-layout {
   background-color: $black;
   color: #fff;
+  min-height: 100vh;
 
   &__header {
     @include onLaptop {
@@ -13,7 +14,6 @@
 
   &__main {
     display: flex;
-    min-height: 100vh;
   }
 
   &__children {
@@ -31,6 +31,7 @@
 
   &__sidebar {
     display: none;
+    width: 120px;
 
     @include onLaptop {
       display: flex;
