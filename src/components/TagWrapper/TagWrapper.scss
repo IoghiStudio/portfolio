@@ -1,0 +1,81 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.tag-wrapper {
+  position: relative;
+  width: 100%;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    top: -24px;
+    left: -16px;
+    color: $gray;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &::after {
+    content: "";
+    top: auto;
+    bottom: -24px;
+  }
+
+  &--h1 {
+    &::before {
+      content: "<h1>";
+    }
+
+    &::after {
+      content: "</h1>";
+    }
+  }
+
+  &--p {
+    &::before {
+      content: "<p>";
+    }
+
+    &::after {
+      content: "</p>";
+    }
+  }
+
+  &--body {
+    &::before {
+      content: "<body>";
+      top: 24px;
+      left: 16px;
+    }
+
+    &::after {
+      content: "</body>";
+      bottom: 24px;
+      left: 16px;
+    }
+  }
+
+  &--html {
+    &::before {
+      content: "<html>";
+      top: 6px;
+      left: 16px;
+    }
+
+    &::after {
+      content: "</html>";
+      bottom: 6px;
+      left: 16px;
+    }
+  }
+
+  &--section {
+    &::before {
+      content: "<section>";
+    }
+
+    &::after {
+      content: "</section>";
+    }
+  }
+}

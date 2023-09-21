@@ -12,6 +12,7 @@ import { AppContextProvider, useAppContext } from '@/context/store';
 import { Header } from '@/components/Header';
 import { Nav } from '@/components/Nav';
 import { Menu } from '@/components/Menu';
+import { TagType, TagWrapper } from '@/components/TagWrapper/TagWrapper';
 
 const opensans = Open_Sans({
   subsets: ["latin"],
@@ -73,9 +74,13 @@ export default function RootLayout({
               />
             </div>
 
-            <div className="main-layout__children">
-              {children}
-            </div>
+            <TagWrapper tagType={TagType.Html}>
+              <TagWrapper tagType={TagType.Body}>
+                <div className="main-layout__children">
+                  {children}
+                </div>
+              </TagWrapper>
+            </TagWrapper>
 
             <Menu />
           </main>
