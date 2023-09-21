@@ -19,9 +19,16 @@
     padding: 0 36px;
   }
 
-  &__logo {
-    @include square(50px);
-    background-color: $gray;
+  &__left {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    font-family: $monserrat;
+    color: $gray;
+    
+    &:hover {
+      color: $purple;
+    }
   }
 
   &__button {

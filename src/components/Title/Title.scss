@@ -1,0 +1,22 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.title {
+  position: relative;
+
+  &::before, &::after {
+    content: "<h1>";
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    color: $gray;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &::after {
+    content: "</h1>";
+    top: auto;
+    bottom: -30px;
+  }
+}

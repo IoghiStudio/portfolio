@@ -3,13 +3,34 @@
 
 .home {
   display: flex;
+  height: 100%;
   justify-content: space-between;
 
   &__image {
-    width: 200px;
-    height: 324px;
+    @include circle(500px);
     @include icon;
     background-size: cover;
     background-image: url('../../media/img/profile.jpg');
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 180px;
+  }
+
+  &__title {
+    margin-bottom: 100px;
+
+    &-word {
+      font-size: 56px;
+      line-height: 125%;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
   }
 }

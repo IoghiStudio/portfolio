@@ -2,8 +2,12 @@
 import '@/styles/globals.scss';
 import './layout.scss';
 import cn from 'classnames';
-import type { Metadata } from 'next';
-import { Open_Sans, Montserrat, Fuggles } from 'next/font/google';
+import { 
+  Open_Sans, 
+  Montserrat, 
+  Fuggles,
+  Kalam
+} from 'next/font/google';
 import { AppContextProvider, useAppContext } from '@/context/store';
 import { Header } from '@/components/Header';
 import { Nav } from '@/components/Nav';
@@ -30,6 +34,13 @@ const fuggles = Fuggles({
   weight: ["400",],
 });
 
+const kalam = Kalam({
+  subsets: ["latin"],
+  style: ["normal"],
+  variable: "--font-kalam",
+  weight: ["300", "400", "700"],
+})
+
 export default function RootLayout({
   children,
 }: {
@@ -45,7 +56,8 @@ export default function RootLayout({
       className={cn(
         [opensans.variable], 
         [monserrat.variable],
-        [fuggles.variable]
+        [fuggles.variable],
+        [kalam.variable]
       )}
     >
       <AppContextProvider>

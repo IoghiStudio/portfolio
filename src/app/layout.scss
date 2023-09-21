@@ -24,6 +24,10 @@
       padding: 48px;
     }
 
+    @include onTablet {
+      min-height: 100vh;
+    }
+
     @include onDesktop {
       padding: 72px;
     }
