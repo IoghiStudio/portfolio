@@ -47,7 +47,7 @@
     width: 100%;
 
     &--forBurger {
-      padding-top: 140px;
+      padding-top: 44%;
     }
 
     &-item {
@@ -59,6 +59,11 @@
       padding: 8px 0px;
       cursor: pointer;
       transition: color 300ms;
+      border-bottom: 1px solid rgb(49, 49, 49);
+
+      &:last-child {
+        border: 0;
+      }
     }
 
     &-icon {
