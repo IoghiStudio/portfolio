@@ -38,14 +38,35 @@
       line-height: 125%;
       letter-spacing: 1px;
       font-weight: 700;
+      cursor: default;
 
       @include onTablet {
         font-size: 56px;
+      }
+    }
+
+    &-letter {
+      // transition-property: color;
+      // transition-duration: 100ms;
+      animation: waviy 1s;
+
+      &:hover {
+        color: $purple;
       }
     }
   }
 
   &__text {
     font-size: 20px;
+  }
+}
+
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateX(-20px);
   }
 }
