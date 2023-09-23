@@ -125,9 +125,9 @@ export const Nav: React.FC<Props> = ({
                 "nav__pages-icon",
                 `nav__pages-icon--${path}`,
                 {
-                  [`nav__pages-icon--${path}--active`]: pathName === path,
+                  [`nav__pages-icon--${path}--active`]: pathName === path || routeHoveredId === id,
                   "nav__pages-icon--forSidebar": forSidebar,
-                  "nav__pages-icon--on-hover": routeHoveredId === id
+                  "nav__pages-icon--sidebar-hover": routeHoveredId === id && forSidebar,
                 }
               )}/>
 
