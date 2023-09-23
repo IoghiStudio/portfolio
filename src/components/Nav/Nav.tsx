@@ -74,7 +74,12 @@ export const Nav: React.FC<Props> = ({
 
   
   return (
-    <div className="nav">
+    <div className={cn(
+      "nav",
+      {
+        "nav--forSidebar": forSidebar,
+      }
+    )}>
       <div className={cn(
         "nav__logo",
         {
@@ -91,7 +96,7 @@ export const Nav: React.FC<Props> = ({
       <div className={cn(
         "nav__pages",
         {
-          "nav__pages--forBurger": !forSidebar
+          "nav__pages--forSidebar": forSidebar,
         }
       )}>
         {routesData.map(route => {
@@ -109,31 +114,44 @@ export const Nav: React.FC<Props> = ({
               onClick={() => setIsMenuOpened(false)}
               onMouseEnter={() => setRouteHoveredId(id)}
               onMouseLeave={() => setRouteHoveredId(0)}
-              className="nav__pages-item"
-            >
-              <div className={cn(
-                "nav__pages-text",
+              className={cn(
+                "nav__pages-item",
                 {
-                  "nav__pages-text--active": routeHoveredId === id
+                  "nav__pages-item--forSidebar": forSidebar,
                 }
-              )}>
-                {name}
-              </div>
-              
+              )}
+            >
               <div className={cn(
                 "nav__pages-icon",
                 `nav__pages-icon--${path}`,
                 {
                   [`nav__pages-icon--${path}--active`]: pathName === path,
+                  "nav__pages-icon--forSidebar": forSidebar,
                   "nav__pages-icon--on-hover": routeHoveredId === id
                 }
               )}/>
+
+              <div className={cn(
+                "nav__pages-text",
+                {
+                  "nav__pages-text--selected": pathName === path && !forSidebar,
+                  "nav__pages-text--forSidebar": forSidebar,
+                  "nav__pages-text--active": routeHoveredId === id
+                }
+              )}>
+                {name}
+              </div>
             </Link>
           )
         })}
       </div>
 
-      <div className="nav__social">
+      <div className={cn(
+        "nav__social",
+        {
+          "nav__social--forSidebar": forSidebar
+        }
+      )}>
         <Link
           target='_blank'
           href={SocialLinks.Linkedin}

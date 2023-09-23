@@ -4,11 +4,15 @@
 .nav {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
   background-color: $dark;
+  
+  &--forSidebar {
+    justify-content: space-between;
+  }
   
 
   &__logo {
@@ -42,27 +46,32 @@
   &__pages {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 16px 0px;
-    width: 100%;
-
-    &--forBurger {
-      padding-top: 44%;
+    width: 120px;
+    
+    &--forSidebar {
+      align-items: center;
+      width: 100%;
     }
 
     &-item {
       position: relative;
       display: flex;
-      justify-content: center;
       align-items: center;
       width: 100%;
       padding: 8px 0px;
       cursor: pointer;
       transition: color 300ms;
-      border-bottom: 1px solid rgb(49, 49, 49);
-
+      border: 0;
+      
       &:last-child {
         border: 0;
+      }
+      
+      &--forSidebar {
+        justify-content: center;
+        border-bottom: 1px solid rgb(49, 49, 49);
       }
     }
 
@@ -71,9 +80,14 @@
       @include icon;
       opacity: 1;
       transition: opacity 300ms;
+      margin-right: 10px;
 
       &--on-hover {
         opacity: 0;
+      }
+      
+      &--forSidebar {
+        margin: 0;
       }
 
       &--home {
@@ -118,16 +132,23 @@
     }
 
     &-text {
-      position: absolute;
       font-size: 12px;
       line-height: 24px;
       text-align: center;
       text-transform: uppercase;
       color: $gray;
       letter-spacing: 1px;
-      opacity: 0;
-      transition-property: background-image opacity;
+      transition-property: color opacity;
       transition-duration: 300ms;
+      
+      &--selected {
+        color: $purple;
+      }
+      
+      &--forSidebar {
+        position: absolute;
+        opacity: 0;
+      }
 
       &--active  {
         opacity: 1;
@@ -145,6 +166,7 @@
     width: 100%;
     background-color: #000;
     justify-content: center;
+    width: 120px;
 
     &-icon {
       @include square(22px);

@@ -18,11 +18,11 @@
 
   &__children {
     width: 100%;
-    padding: 58px 34px;
+    padding: 82px 34px;
     min-height: calc(100vh - 100px);
 
     @include onTablet {
-      padding: 58px;
+      padding: 82px 58px;
     }
 
     @include onLaptop {
