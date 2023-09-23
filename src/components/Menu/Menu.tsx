@@ -19,4 +19,5 @@ export const Menu = () => {
       <Nav />
     </div>
   )
-}
+};
+

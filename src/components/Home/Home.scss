@@ -7,10 +7,21 @@
   justify-content: space-between;
 
   &__image {
-    @include circle(500px);
+    display: none;
     @include icon;
     background-size: cover;
     background-image: url('../../media/img/profile.jpg');
+
+    @include onLaptop {
+      display: flex;
+      margin-top: 140px;
+      @include circle (300px);
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+      @include circle(500px);
+    }
   }
 
   &__info {
@@ -23,10 +34,14 @@
     margin-bottom: 100px;
 
     &-word {
-      font-size: 56px;
+      font-size: 36px;
       line-height: 125%;
       letter-spacing: 1px;
       font-weight: 700;
+
+      @include onTablet {
+        font-size: 56px;
+      }
     }
   }
 

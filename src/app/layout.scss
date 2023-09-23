@@ -18,7 +18,7 @@
 
   &__children {
     width: 100%;
-    padding: 34px;
+    padding: 58px 34px;
     min-height: calc(100vh - 100px);
 
     @include onTablet {
@@ -36,7 +36,7 @@
 
   &__sidebar {
     display: none;
-    width: 120px;
+    width: 80px;
 
     @include onLaptop {
       display: flex;

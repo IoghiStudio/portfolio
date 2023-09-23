@@ -59,6 +59,7 @@ export const Nav: React.FC<Props> = ({
   forSidebar=false
 }) => {
   const [pathName, setPathName] = useState<string | null>(null);
+  const [routeHoveredId, setRouteHoveredId] = useState<number>(0);
   const {
     setIsMenuOpened
   } = useAppContext();
@@ -74,19 +75,25 @@ export const Nav: React.FC<Props> = ({
   
   return (
     <div className="nav">
-      <div className="nav__logo">
+      <div className={cn(
+        "nav__logo",
+        {
+          "nav__logo--disabled": !forSidebar
+        }
+      )}>
         <div className="nav__logo-img"/>
 
         <div className="nav__logo-name">
           Nicu
         </div>
-
-        <div className="nav__logo-text">
-          Web Developer
-        </div>
       </div>
 
-      <div className="nav__pages">
+      <div className={cn(
+        "nav__pages",
+        {
+          "nav__pages--forBurger": !forSidebar
+        }
+      )}>
         {routesData.map(route => {
           const {
             id,
@@ -100,14 +107,27 @@ export const Nav: React.FC<Props> = ({
               key={id} 
               href={routePath}
               onClick={() => setIsMenuOpened(false)}
-              className={cn(
-                "nav__pages-item",
-                {
-                  "nav__pages-item--active": pathName === path
-                }
-              )}
+              onMouseEnter={() => setRouteHoveredId(id)}
+              onMouseLeave={() => setRouteHoveredId(0)}
+              className="nav__pages-item"
             >
-              {name}
+              <div className={cn(
+                "nav__pages-text",
+                {
+                  "nav__pages-text--active": routeHoveredId === id
+                }
+              )}>
+                {name}
+              </div>
+              
+              <div className={cn(
+                "nav__pages-icon",
+                `nav__pages-icon--${path}`,
+                {
+                  [`nav__pages-icon--${path}--active`]: pathName === path,
+                  "nav__pages-icon--on-hover": routeHoveredId === id
+                }
+              )}/>
             </Link>
           )
         })}
