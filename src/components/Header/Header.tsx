@@ -1,5 +1,5 @@
 "use client";
-import { useAppContext } from '@/context/store';
+import { useAppContext } from '@/context/MenuContext/store';
 import { MenuButton } from '../MenuButton';
 import './Header.scss';
 import cn from 'classnames';
@@ -14,7 +14,7 @@ export const Header = () => {
     <div className="header">
       <div className="header__left">
         <div className="header__logo"/>
-        
+
         <div className="header__text">
           icu
         </div>

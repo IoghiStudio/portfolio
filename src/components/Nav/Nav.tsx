@@ -4,7 +4,7 @@ import './Nav.scss';
 import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { useAppContext } from '@/context/store';
+import { useAppContext } from '@/context/MenuContext/store';
 
 enum SocialLinks {
   Linkedin = 'https://www.linkedin.com/in/nicusor-iorga/',
@@ -55,7 +55,7 @@ type Props = {
   forSidebar?: boolean;
 };
 
-export const Nav: React.FC<Props> = ({ 
+export const Nav: React.FC<Props> = ({
   forSidebar=false
 }) => {
   const [pathName, setPathName] = useState<string | null>(null);
@@ -71,7 +71,7 @@ export const Nav: React.FC<Props> = ({
   useEffect(() => {
     setPathName(selectedPath);
   })
-  
+
   return (
     <div className={cn(
       "nav",
@@ -108,7 +108,7 @@ export const Nav: React.FC<Props> = ({
 
           return (
             <Link
-              key={id} 
+              key={id}
               href={routePath}
               onClick={() => setIsMenuOpened(false)}
               onMouseEnter={() => setRouteHoveredId(id)}
@@ -157,7 +157,7 @@ export const Nav: React.FC<Props> = ({
           className="nav__social-icon nav__social-icon--linkedin"
           />
 
-        <Link 
+        <Link
           href={SocialLinks.Github}
           target='_blank'
           className="nav__social-icon nav__social-icon--github"

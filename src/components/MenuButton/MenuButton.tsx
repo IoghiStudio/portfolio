@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import './MenuButton.scss';
 import cn from 'classnames';
-import { useAppContext } from '@/context/store';
+import { useAppContext } from '@/context/MenuContext/store';
 
 type Props = {
 
@@ -15,7 +15,7 @@ export const MenuButton: React.FC<Props> = () => {
     isMenuOpened,
     setIsMenuOpened
   } = useAppContext();
-  
+
   return (
     <div
       className={cn(

@@ -1,9 +1,4 @@
-const Page = () => {
-  return (
-    <>
-      Lorem ipsum
-    </>
-  )
-};
+import { About } from "@/components/About";
 
+const Page = () => <About />
 export default Page;

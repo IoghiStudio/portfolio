@@ -2,15 +2,16 @@
 import '@/styles/globals.scss';
 import './layout.scss';
 import cn from 'classnames';
-import { 
+import {
   Fuggles,
   Kalam
 } from 'next/font/google';
-import { AppContextProvider, useAppContext } from '@/context/store';
+import { AppContextProvider, useAppContext } from '@/context/MenuContext/store';
 import { Header } from '@/components/Header';
 import { Nav } from '@/components/Nav';
 import { Menu } from '@/components/Menu';
 import { TagType, TagWrapper } from '@/components/TagWrapper/TagWrapper';
+import { TitleAnimContextProvider } from '@/context/TitleAnimContext/store';
 
 const fuggles = Fuggles({
   subsets: ["latin"],
@@ -36,37 +37,39 @@ export default function RootLayout({
   } = useAppContext();
 
   return (
-    <html 
-      lang="en" 
+    <html
+      lang="en"
       className={cn(
         [fuggles.variable],
         [kalam.variable]
       )}
     >
       <AppContextProvider>
-        <body className='main-layout'>
-          <header className="main-layout__header">
-            <Header />
-          </header>
+        <TitleAnimContextProvider>
+          <body className='main-layout'>
+            <header className="main-layout__header">
+              <Header />
+            </header>
 
-          <main className='main-layout__main'>
-            <div className="main-layout__sidebar">
-              <Nav
-                forSidebar={true}
-              />
-            </div>
+            <main className='main-layout__main'>
+              <div className="main-layout__sidebar">
+                <Nav
+                  forSidebar={true}
+                />
+              </div>
 
-            <TagWrapper tagType={TagType.Html}>
-              <TagWrapper tagType={TagType.Body}>
-                <div className="main-layout__children">
-                  {children}
-                </div>
+              <TagWrapper tagType={TagType.Html}>
+                <TagWrapper tagType={TagType.Body}>
+                  <div className="main-layout__children">
+                    {children}
+                  </div>
+                </TagWrapper>
               </TagWrapper>
-            </TagWrapper>
 
-            <Menu />
-          </main>
-        </body>
+              <Menu />
+            </main>
+          </body>
+        </TitleAnimContextProvider>
       </AppContextProvider>
     </html>
   )
