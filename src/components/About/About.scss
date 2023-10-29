@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: column;
 
+  @include onTablet {
+    flex-direction: row;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -29,14 +33,14 @@
 
     &-word {
       margin-right: 10px;
-      font-size: 36px;
+      font-size: 30px;
       line-height: 125%;
       letter-spacing: 1px;
       font-weight: 700;
       cursor: default;
 
       @include onTablet {
-        font-size: 56px;
+        font-size: 48px;
       }
     }
 
@@ -58,11 +62,29 @@
   }
 
   &__text {
-    font-size: 20px;
-    line-height: 125%;
+    font-size: 16px;
+    line-height: 22px;
+
+    &-section {
+      text-indent: 40px;
+      display: block;
+      padding-bottom: 20px;
+
+      &:last-child {
+        padding-bottom: 8px;
+      }
+    }
   }
 
-  &__skils {
+  &__skills {
+    display: none;
+    flex-shrink: 0;
+    @include square(220px);
+    background-color: blanchedalmond;
 
+    @include onTablet {
+      margin-left: 20px;
+      display: block;
+    }
   }
 }

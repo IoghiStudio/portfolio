@@ -69,8 +69,8 @@ export const About = () => {
   return (
     <div className="about">
       <div className="about__content">
-          <h1 className='about__title'>
-        <TagWrapper tagType={TagType.H1}>
+        <h1 className='about__title'>
+          <TagWrapper tagType={TagType.H1}>
             {wordsLines.map((wordsLine) => {
               const { id, words } = wordsLine;
 
@@ -91,11 +91,22 @@ export const About = () => {
               )
             })}
           </TagWrapper>
-          </h1>
+        </h1>
 
         <TagWrapper tagType={TagType.P}>
           <p className="about__text">
-            Hello
+            <span className="about__text-section">
+              Passionate Software Developer with 4 years of experience.
+              My background in Game Development and 3D Art has equipped me with a unique skill set that combines programming and design, enabling me to craft exceptional web applications.
+            </span>
+
+            <span className="about__text-section">
+              I’m an excellent communicator and problem solver, and am highly organized and detail-oriented. I am looking for new opportunities to apply my skills and knowledge to help create successful projects.
+            </span>
+
+            <span className="about__text-section">
+              Passionate about technology, I am committed to continuous self-improvement and aspire to become a great Software Engineer.
+            </span>
           </p>
         </TagWrapper>
       </div>
