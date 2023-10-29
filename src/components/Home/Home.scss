@@ -27,11 +27,12 @@
 
     @include onLaptop {
       position: static;
-      margin-top: 140px;
+      margin-top: 120px;
       @include circle (300px);
     }
 
     @include onDesktop {
+      right: 100px;
       margin-top: 70px;
       @include circle(400px);
     }
@@ -46,7 +47,13 @@
   &__title {
     margin-bottom: 100px;
 
+    &-words {
+      display: flex;
+      align-items: center;
+    }
+
     &-word {
+      margin-right: 10px;
       font-size: 36px;
       line-height: 125%;
       letter-spacing: 1px;
@@ -58,13 +65,19 @@
       }
     }
 
-    &-letter {
+    &-ch {
       display: inline-block;
       transition-property: color, transform;
-      transition-duration: 100ms, 500ms;
+      transition-duration: 200ms, 200ms;
 
       &:hover {
         color: $purple;
+        transform: scale(1.2) rotateY(40deg);
+      }
+
+      &--active {
+        color: $purple;
+        transform: scale(1.2) rotateY(40deg);
       }
     }
   }
