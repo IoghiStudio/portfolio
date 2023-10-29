@@ -4,7 +4,6 @@ import { useState, useEffect, useCallback } from 'react';
 import './Home.scss';
 import classNames from 'classnames';
 import { WordsLine } from '@/types/WordsLine';
-import { useTitleAnimContext } from '@/context/TitleAnimContext/store';
 
 const wordsLines: WordsLine[] = [
   {

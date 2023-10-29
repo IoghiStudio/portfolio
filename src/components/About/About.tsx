@@ -4,7 +4,6 @@ import { TagType, TagWrapper } from '../TagWrapper';
 import './About.scss';
 import { useState, useEffect, useCallback } from 'react';
 import classNames from 'classnames';
-import { useTitleAnimContext } from '@/context/TitleAnimContext/store';
 
 const wordsLines: WordsLine[] = [
   {
