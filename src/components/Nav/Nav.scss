@@ -9,11 +9,11 @@
   height: 100%;
   width: 100%;
   background-color: $dark;
-  
+
   &--forSidebar {
     justify-content: space-between;
   }
-  
+
 
   &__logo {
     display: flex;
@@ -49,7 +49,7 @@
     align-items: flex-start;
     padding: 16px 0px;
     width: 180px;
-    
+
     &--forSidebar {
       align-items: center;
       width: 100%;
@@ -64,11 +64,11 @@
       cursor: pointer;
       transition: color 300ms;
       border: 0;
-      
+
       &:last-child {
         border: 0;
       }
-      
+
       &--forSidebar {
         justify-content: center;
         border-bottom: 1px solid rgb(49, 49, 49);
@@ -83,11 +83,11 @@
       transition-property: opacity, background-image;
       transition-duration: 300ms;
       margin-right: 10px;
-      
+
       &--sidebar-hover {
         opacity: 0;
       }
-      
+
       &--forSidebar {
         @include square(24px);
         margin: 0;
@@ -95,41 +95,41 @@
 
       &--home {
         background-image: url('../../media/icons/home-gray.svg');
-        
+
         &--active {
           background-image: url('../../media/icons/home-purple.svg');
         }
 
         // &
       }
-      
+
       &--about {
         background-image: url('../../media/icons/about-gray.png');
-                
+
         &--active {
           background-image: url('../../media/icons/about-purple.png');
         }
       }
-      
+
       &--portfolio {
         background-image: url('../../media/icons/portfolio-gray.svg');
-                
+
         &--active {
           background-image: url('../../media/icons/portfolio-purple.svg');
         }
       }
-      
+
       &--blog {
         background-image: url('../../media/icons/home-gray.svg');
-                
+
         &--active {
           background-image: url('../../media/icons/home-purple.svg');
         }
       }
-      
+
       &--contact {
         background-image: url('../../media/icons/contact-gray.png');
-                
+
         &--active {
           background-image: url('../../media/icons/contact-purple.png');
         }
@@ -147,11 +147,11 @@
       letter-spacing: 1px;
       transition-property: color, opacity;
       transition-duration: 300ms;
-      
+
       &--selected {
         color: $purple;
       }
-      
+
       &--forSidebar {
         font-size: 12px;
         top: 16px;
@@ -167,12 +167,18 @@
   }
 
   &__social {
+    position: relative;
+    left: -40px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     padding: 16px 0px;
     width: 120px;
-    
+
+    @include onLaptop {
+      position: static;
+      flex-direction: column;
+    }
+
     &--forSidebar {
       width: 100%;
       align-items: center;
@@ -180,8 +186,8 @@
     }
 
     &-icon {
-      @include square(22px);
       @include icon;
+      @include square(36px);
       transition-property: background-image, transform;
       transition-duration: 300ms;
       cursor: pointer;
@@ -189,22 +195,34 @@
       &:hover {
         transform: scale(1.05);
       }
-      
+
+      @include onLaptop {
+        @include square(22px);
+      }
+
       &--linkedin {
-        margin-bottom: 12px;
+        margin-right: 20px;
         background-image: url('../../media/icons/linkedin-gray.svg');
-        
+
         &:hover {
           background-image: url('../../media/icons/linkedin-purple.svg');
         }
+
+        @include onLaptop {
+          margin-bottom: 12px;
+        }
       }
-      
+
       &--github {
-        @include square(24px);
+        @include square(40px);
         background-image: url('../../media/icons/github-gray.svg');
-        
+
         &:hover {
           background-image: url('../../media/icons/github-purple.svg');
+        }
+
+        @include onLaptop {
+          @include square(24px);
         }
       }
     }
