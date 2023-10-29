@@ -13,6 +13,20 @@
     margin: 0 auto;
   }
 
+  &__outside {
+    display: none;
+    color: $black;
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    font-weight: 700;
+    font-style: 30px;
+
+    @media (min-width: 1900px) {
+      display: block;
+    }
+  }
+
   &__header {
     @include onLaptop {
       display: none;

@@ -51,6 +51,10 @@ export default function RootLayout({
               <Header />
             </header>
 
+            <div className="main-layout__outside">
+              FULL HD !?
+            </div>
+
             <main className='main-layout__main'>
               <div className="main-layout__sidebar">
                 <Nav
