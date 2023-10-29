@@ -7,20 +7,33 @@
   justify-content: space-between;
 
   &__image {
-    display: none;
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    @include circle(160px);
     @include icon;
     background-size: cover;
     background-image: url('../../media/img/profile.jpg');
 
+    @include onTabletSmall {
+      @include circle(200px);
+    }
+
+    @include onTablet {
+      @include circle(250px);
+      top: 110px;
+      right: 80px;
+    }
+
     @include onLaptop {
-      display: flex;
+      position: static;
       margin-top: 140px;
       @include circle (300px);
     }
 
     @include onDesktop {
-      margin-top: 0;
-      @include circle(500px);
+      margin-top: 70px;
+      @include circle(400px);
     }
   }
 
@@ -46,9 +59,9 @@
     }
 
     &-letter {
-      // transition-property: color;
-      // transition-duration: 100ms;
-      animation: waviy 1s;
+      display: inline-block;
+      transition-property: color, transform;
+      transition-duration: 100ms, 500ms;
 
       &:hover {
         color: $purple;
@@ -61,12 +74,3 @@
   }
 }
 
-@keyframes waviy {
-  0%,40%,100% {
-    transform: translateY(0);
-  }
-
-  20% {
-    transform: translateX(-20px);
-  }
-}

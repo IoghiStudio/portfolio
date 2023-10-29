@@ -71,7 +71,6 @@ export const Nav: React.FC<Props> = ({
   useEffect(() => {
     setPathName(selectedPath);
   })
-
   
   return (
     <div className={cn(

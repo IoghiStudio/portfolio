@@ -3,8 +3,6 @@ import '@/styles/globals.scss';
 import './layout.scss';
 import cn from 'classnames';
 import { 
-  Open_Sans, 
-  Montserrat, 
   Fuggles,
   Kalam
 } from 'next/font/google';
@@ -13,20 +11,6 @@ import { Header } from '@/components/Header';
 import { Nav } from '@/components/Nav';
 import { Menu } from '@/components/Menu';
 import { TagType, TagWrapper } from '@/components/TagWrapper/TagWrapper';
-
-const opensans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-opensans",
-  style: ["normal", "italic"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
-const monserrat = Montserrat({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-monserrat",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 
 const fuggles = Fuggles({
   subsets: ["latin"],
@@ -52,11 +36,9 @@ export default function RootLayout({
   } = useAppContext();
 
   return (
-    <html
+    <html 
       lang="en" 
       className={cn(
-        [opensans.variable], 
-        [monserrat.variable],
         [fuggles.variable],
         [kalam.variable]
       )}
