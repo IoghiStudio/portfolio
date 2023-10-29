@@ -79,12 +79,16 @@
   &__skills {
     display: none;
     flex-shrink: 0;
-    @include square(220px);
     background-color: blanchedalmond;
 
     @include onTablet {
       margin-left: 20px;
+      width: 40%;
       display: block;
+    }
+
+    @include onLaptop {
+      width: 40%;
     }
   }
 }
