@@ -20,10 +20,6 @@
     @include onTablet {
       padding: 20px 0;
     }
-
-    @include onDesktop {
-      max-width: 800px;
-    }
   }
 
   &__title {
@@ -71,6 +67,12 @@
   &__text {
     font-size: 16px;
     line-height: 22px;
+    width: 100%;
+
+    @include onLaptop {
+      width: 60%;
+      max-width: 800px;
+    }
 
     &-section {
       text-indent: 40px;
@@ -79,12 +81,15 @@
 
       @include onLaptop {
         padding-bottom: 30px;
-        width: 60%;
       }
 
       &:first-child {
         @include onTablet {
           width: 60%;
+        }
+
+        @include onLaptop {
+          width: 100%;
         }
       }
 
@@ -104,6 +109,8 @@
     background-image: url('../../media/img/profile.jpg');
 
     @media (min-width: 400px) {
+      top: 26px;
+      right: 26px;
       @include circle(120px);
     }
 
@@ -118,7 +125,7 @@
     }
 
     @include onLaptop {
-      top: 26px;
+      top: 60px;
       right: 60px;
       @include circle (300px);
     }
