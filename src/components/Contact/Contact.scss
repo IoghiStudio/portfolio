@@ -1,0 +1,100 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+// https://calendly.com/nicu-iorga
+.contact {
+  display: flex;
+  flex-direction: column;
+
+  @include onTablet {
+    flex-direction: row;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 28px;
+    width: 100%;
+
+    @include onTablet {
+      padding: 20px 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    &-words {
+      display: flex;
+      align-items: center;
+    }
+
+    &-word {
+      margin-right: 10px;
+      font-size: 30px;
+      line-height: 125%;
+      letter-spacing: 1px;
+      font-weight: 700;
+      cursor: default;
+
+      @include onTablet {
+        font-size: 48px;
+      }
+    }
+
+    &-ch {
+      display: inline-block;
+      transition-property: color, transform;
+      transition-duration: 200ms, 200ms;
+
+      &:hover {
+        color: $purple;
+        transform: scale(1.2) rotateY(40deg);
+      }
+
+      &--active {
+        color: $purple;
+        transform: scale(1.2) rotateY(40deg);
+      }
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 22px;
+    width: 100%;
+
+    @include onLaptop {
+      width: 60%;
+      max-width: 640px;
+    }
+
+    &-section {
+      text-indent: 40px;
+      display: block;
+      padding-bottom: 20px;
+
+      @include onLaptop {
+        padding-bottom: 30px;
+      }
+
+      &:first-child {
+        @include onTablet {
+          width: 60%;
+        }
+
+        @include onLaptop {
+          width: 100%;
+        }
+      }
+
+      &:last-child {
+        padding-bottom: 8px;
+      }
+    }
+  }
+}
