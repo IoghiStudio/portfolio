@@ -6,6 +6,25 @@
   height: 100%;
   justify-content: space-between;
 
+  &__contact {
+    margin-top: 60px;
+    width: max-content;
+    padding: 0 40px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid $purple;
+    transition-property: transform, color, background-color;
+    transition-duration: 200ms, 200ms, 200ms;
+
+    &:hover {
+      background-color: $purple;
+      color: $black;
+      transform: scale(1.05);
+    }
+  }
+
   &__animation {
     position: absolute;
     top: 120px;

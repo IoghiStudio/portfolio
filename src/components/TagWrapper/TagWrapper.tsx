@@ -8,6 +8,7 @@ export enum TagType {
   Body,
   Html,
   Section,
+  Form,
 };
 
 type Props = {
@@ -27,7 +28,8 @@ export const TagWrapper: React.FC<Props> = ({
         "tag-wrapper--p": tagType === TagType.P,
         "tag-wrapper--body": tagType === TagType.Body,
         "tag-wrapper--html": tagType === TagType.Html,
-        "tag-wrapper--section": tagType == TagType.Section
+        "tag-wrapper--section": tagType == TagType.Section,
+        "tag-wrapper--form": tagType == TagType.Form
       }
     )}>
       {children}

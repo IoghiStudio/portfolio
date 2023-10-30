@@ -5,6 +5,7 @@ import './Home.scss';
 import classNames from 'classnames';
 import { WordsLine } from '@/types/WordsLine';
 import { SpinCube } from '../SpinCube';
+import Link from 'next/link';
 
 const wordsLines: WordsLine[] = [
   {
@@ -130,6 +131,13 @@ export const Home = () => {
             Front End / Full Stack developer
           </p>
         </TagWrapper>
+
+        <Link
+          href={'/contact/'}
+          className="home__contact"
+        >
+          Contact me!
+        </Link>
       </div>
 
       <div className="home__animation">

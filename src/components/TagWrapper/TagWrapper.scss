@@ -78,4 +78,14 @@
       content: "</section>";
     }
   }
+
+  &--form {
+    &::before {
+      content: "<form>";
+    }
+
+    &::after {
+      content: "</form>";
+    }
+  }
 }
