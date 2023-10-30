@@ -159,6 +159,11 @@
         width: 48%;
         margin-left: 2%;
       }
+
+      @include onLaptop {
+        width: 49%;
+        margin-left: 1%;
+      }
     }
 
     &--message {

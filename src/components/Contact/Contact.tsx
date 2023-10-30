@@ -27,6 +27,12 @@ const wordsLines: WordsLine[] = [
   },
 ];
 
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
 export const Contact = () => {
   const [timer, setTimer] = useState<number>(0);
@@ -37,6 +43,26 @@ export const Contact = () => {
   const [email, setEmail] = useState<string>('');
   const [subject, setSubject] = useState<string>('');
   const [message, setMessage] = useState<string>('');
+
+  const clearForm = useCallback(() => {
+    setName('');
+    setEmail('');
+    setSubject('');
+    setMessage('');
+  }, []);
+
+  const handleSubmitForm = useCallback(() => {
+    const data: FormData = {
+      name,
+      email,
+      subject,
+      message,
+    };
+
+    //api call to submit data;
+
+    clearForm();
+  }, []);
 
   const handleTimer = useCallback(() => {
     const id = setInterval(() => {
@@ -120,7 +146,7 @@ export const Contact = () => {
               onSubmit={(e) => {
                 e.preventDefault();
 
-                //send data
+                handleSubmitForm();
               }}
             >
               <div className="contact__inputs">
