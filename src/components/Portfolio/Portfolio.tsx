@@ -36,10 +36,10 @@ const portfolioProjects: PortfolioProject[] = [
     id: '1',
     title: 'Job Platform',
     img: 'videoworkers',
-    description: 'Upwork Homepage clean implementation, desktop version only',
+    description: 'Job platform for both candidates and companies, mobile first, responsive UI, more than 50 pages',
     techstack: ['Next.js', 'Typescript', 'Scss', 'Rest Api', 'Axios', 'Express.js', 'PostgreSql'],
-    demo: 'https://ioghistudio.github.io/upwork-homepage/',
-    code: 'https://github.com/IoghiStudio/upwork-homepage'
+    demo: 'http://staging.videoworkers.com/',
+    code: 'https://github.com/IoghiStudio/jobs-platform'
   },
   {
     id: '2',
