@@ -4,6 +4,7 @@ import './Portfolio.scss';
 import { useCallback, useEffect, useState } from 'react';
 import { TagType, TagWrapper } from '../TagWrapper';
 import classNames from 'classnames';
+import Link from 'next/link';
 
 const wordsLines: WordsLine[] = [
   {
@@ -23,25 +24,32 @@ const wordsLines: WordsLine[] = [
 interface PortfolioProject {
   id: string;
   title: string;
-  route: string;
   img: string;
-}
-
-const baseRoute: string = '/portfolio';
+  description: string;
+  techstack: string[]
+  demo: string;
+  code: string;
+};
 
 const portfolioProjects: PortfolioProject[] = [
   {
     id: '1',
-    title: 'Upwork Homepage',
-    route: `${baseRoute}/upwork`,
-    img: 'upwork'
+    title: 'Job Platform',
+    img: 'videoworkers',
+    description: 'Upwork Homepage clean implementation, desktop version only',
+    techstack: ['Next.js', 'Typescript', 'Scss', 'Rest Api', 'Axios', 'Express.js', 'PostgreSql'],
+    demo: 'https://ioghistudio.github.io/upwork-homepage/',
+    code: 'https://github.com/IoghiStudio/upwork-homepage'
   },
   {
     id: '2',
-    title: 'Jobs Platform',
-    route: `${baseRoute}/videoworkers`,
-    img: 'videoworkers'
-  }
+    title: 'Upwork Homepage',
+    img: 'upwork',
+    description: 'Upwork Homepage clean implementation, desktop version only',
+    techstack: ['React.js', 'Typescript', 'Scss'],
+    demo: 'https://ioghistudio.github.io/upwork-homepage/',
+    code: 'https://github.com/IoghiStudio/upwork-homepage'
+  },
 ];
 
 export const Portfolio = () => {
@@ -114,8 +122,11 @@ export const Portfolio = () => {
           const {
             id,
             title,
-            route,
-            img
+            img,
+            description,
+            techstack,
+            demo,
+            code,
           } = project;
 
           return (
@@ -129,6 +140,28 @@ export const Portfolio = () => {
 
               <div className="portfolio__name">
                 {title}
+              </div>
+
+              <div className="portfolio__description">
+                {description}
+              </div>
+
+              <div className="portfolio__links">
+                <Link
+                  href={demo}
+                  target='_blank'
+                  className="portfolio__link portfolio__link--demo"
+                  >
+                  Demo
+                </Link>
+
+                <Link
+                  href={code}
+                  target='_blank'
+                  className="portfolio__link portfolio__link--code"
+                >
+                  Code
+                </Link>
               </div>
             </div>
           )

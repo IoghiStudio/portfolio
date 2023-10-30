@@ -61,8 +61,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding-bottom: 120px;
-    background-color: rgb(78, 75, 75);
+    padding-bottom: 60px;
+    // background-color: rgb(78, 75, 75);
 
     @include onTablet {
       flex-direction: row;
@@ -78,7 +78,8 @@
   &__image {
     flex-shrink: 0;
     width: 100%;
-    padding-top: 70%;
+    padding-top: 64%;
+    margin-bottom: 10px;
     background-color: antiquewhite;
     background-repeat: no-repeat;
     background-size: cover;
@@ -92,6 +93,57 @@
 
     &--upwork {
       background-image: url('../../media/projects/upwork-project.png');
+    }
+  }
+
+  &__name {
+    order: -1;
+    margin-bottom: 10px;
+    font-size: 22px;
+    text-align: center;
+
+    @include onTablet {
+      order: 0;
+      margin: 0;
+    }
+  }
+
+  &__description {
+    margin-bottom: 12px;
+    text-indent: 14px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__techstack {}
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100px;
+    border: 1px solid $purple;
+    transition-property: transform, background-color;
+    transition-duration: 200ms, 200ms;
+
+    &:hover {
+      background-color: $purple;
+      transform: scale(1.05);
+    }
+
+    &--demo {
+      margin-right: 8px;
+    }
+
+    &--code {
+      margin-left: 8px;
     }
   }
 }
