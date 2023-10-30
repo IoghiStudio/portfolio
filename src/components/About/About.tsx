@@ -5,6 +5,7 @@ import './About.scss';
 import { useState, useEffect, useCallback } from 'react';
 import classNames from 'classnames';
 
+
 const wordsLines: WordsLine[] = [
   {
     id: '1',
@@ -111,9 +112,7 @@ export const About = () => {
         </TagWrapper>
       </div>
 
-      <div className="about__skills">
-
-      </div>
+      <div className="about__picture"/>
     </div>
   )
 }

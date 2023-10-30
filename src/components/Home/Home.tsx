@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import './Home.scss';
 import classNames from 'classnames';
 import { WordsLine } from '@/types/WordsLine';
+import { SpinCube } from '../SpinCube';
 
 const wordsLines: WordsLine[] = [
   {
@@ -131,7 +132,9 @@ export const Home = () => {
         </TagWrapper>
       </div>
 
-      <div className="home__image"/>
+      <div className="home__animation">
+        <SpinCube />
+      </div>
     </div>
   )
 }

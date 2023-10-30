@@ -1,0 +1,138 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.spincube {
+  @include square(100px);
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+
+  @include onTabletSmall {
+    @include square(160px);
+  }
+}
+
+.image {
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  transform: translate(50%, 50%);
+
+  &__sass {
+    background-image: url('../../media/cubeLogos/sassLogo.svg');
+  }
+
+  &__html {
+    background-image: url('../../media/cubeLogos/htmlLogo.svg');
+  }
+
+  &__js {
+    background-image: url('../../media/cubeLogos/jsLogo.svg');
+  }
+
+  &__ts {
+    background-image: url('../../media/cubeLogos/tsLogo.svg');
+    transform: rotate(-90deg) translate(-25px, 25px);
+
+    @include onTabletSmall {
+      transform: rotate(-90deg) translate(-40px, 40px);
+    }
+  }
+
+  &__react {
+    background-image: url('../../media/cubeLogos/reactLogo.svg');
+  }
+
+  &__git {
+    background-image: url('../../media/cubeLogos/gitLogo.svg');
+    transform: rotate(-90deg) translate(-40px, 40px);
+
+    @include onTabletSmall {
+      transform: rotate(-90deg) translate(-40px, 40px);
+    }
+  }
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hsla(0,0%,100%,.4);
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px 0 #ffffe0;
+  opacity: 1;
+}
+
+.box1 {
+  transform: translateZ(50px);
+
+  @include onTabletSmall {
+    transform: translateZ(80px);
+  }
+}
+
+.box2 {
+  transform: rotateY(90deg) translateX(50px);
+  transform-origin: right;
+
+  @include onTabletSmall {
+    transform: rotateY(90deg) translateX(80px);
+  }
+}
+
+.box3 {
+  transform: rotateY(180deg) translateZ(50px);
+
+  @include onTabletSmall {
+    transform: rotateY(180deg) translateZ(80px);
+  }
+}
+
+.box4 {
+  transform: rotateY(-90deg) translateX(-50px);
+  transform-origin: left;
+
+  @include onTabletSmall {
+    transform: rotateY(-90deg) translateX(-80px);
+  }
+}
+
+.box5 {
+  transform: rotateX(-90deg) translateY(-50px);
+  transform-origin: top;
+
+  @include onTabletSmall {
+    transform: rotateX(-90deg) translateY(-80px);
+  }
+}
+
+.box6 {
+  transform: rotateX(90deg) translateY(50px);
+  transform-origin: bottom;
+
+  @include onTabletSmall {
+    transform: rotateX(90deg) translateY(80px);
+  }
+}
+
+/* Animating the elements */
+@keyframes rotate {
+  0%,
+  100% {
+      transform: rotate(0deg);
+  }
+  20% {
+      transform: rotateY(90deg) rotateZ(90deg);
+  }
+  40% {
+      transform: rotateY(180deg) rotateZ(-90deg);
+  }
+  60% {
+      transform: rotateY(270deg) rotateZ(90deg);
+  }
+  80% {
+      transform: rotateY(360deg) rotateZ(-90deg);
+  }
+}
