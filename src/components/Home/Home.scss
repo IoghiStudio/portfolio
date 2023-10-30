@@ -15,13 +15,17 @@
     flex-shrink: 0;
 
     @include onTablet {
-      position: static;
-      align-items: center;
       width: 40%;
     }
 
     @include onLaptop {
       width: 40%;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: 20px;
+      align-items: center;
     }
   }
 

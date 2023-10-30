@@ -10,6 +10,10 @@
   @include onTabletSmall {
     @include square(160px);
   }
+
+  @include onLaptop {
+    @include square(220px);
+  }
 }
 
 .image {
@@ -37,6 +41,10 @@
     @include onTabletSmall {
       transform: rotate(-90deg) translate(-40px, 40px);
     }
+
+    @include onLaptop {
+      transform: rotate(-90deg) translate(-55px, 55px);
+    }
   }
 
   &__react {
@@ -49,6 +57,10 @@
 
     @include onTabletSmall {
       transform: rotate(-90deg) translate(-40px, 40px);
+    }
+
+    @include onTabletSmall {
+      transform: rotate(-90deg) translate(-55px, 55px);
     }
   }
 }
@@ -71,6 +83,10 @@
   @include onTabletSmall {
     transform: translateZ(80px);
   }
+
+  @include onLaptop {
+    transform: translateZ(110px);
+  }
 }
 
 .box2 {
@@ -80,6 +96,10 @@
   @include onTabletSmall {
     transform: rotateY(90deg) translateX(80px);
   }
+
+  @include onLaptop {
+    transform: rotateY(90deg) translateX(110px);
+  }
 }
 
 .box3 {
@@ -87,6 +107,10 @@
 
   @include onTabletSmall {
     transform: rotateY(180deg) translateZ(80px);
+  }
+
+  @include onLaptop {
+    transform: rotateY(180deg) translateZ(110px);
   }
 }
 
@@ -97,6 +121,10 @@
   @include onTabletSmall {
     transform: rotateY(-90deg) translateX(-80px);
   }
+
+  @include onLaptop {
+    transform: rotateY(-90deg) translateX(-110px);
+  }
 }
 
 .box5 {
@@ -106,6 +134,10 @@
   @include onTabletSmall {
     transform: rotateX(-90deg) translateY(-80px);
   }
+
+  @include onLaptop {
+    transform: rotateX(-90deg) translateY(-110px);
+  }
 }
 
 .box6 {
@@ -114,6 +146,10 @@
 
   @include onTabletSmall {
     transform: rotateX(90deg) translateY(80px);
+  }
+
+  @include onLaptop {
+    transform: rotateX(90deg) translateY(110px);
   }
 }
 

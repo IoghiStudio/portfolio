@@ -18,8 +18,11 @@
     }
 
     @include onTablet {
-      width: 50%;
       padding: 20px 0;
+    }
+
+    @include onDesktop {
+      max-width: 800px;
     }
   }
 
@@ -74,6 +77,17 @@
       display: block;
       padding-bottom: 20px;
 
+      @include onLaptop {
+        padding-bottom: 30px;
+        width: 60%;
+      }
+
+      &:first-child {
+        @include onTablet {
+          width: 60%;
+        }
+      }
+
       &:last-child {
         padding-bottom: 8px;
       }
@@ -89,21 +103,23 @@
     background-size: cover;
     background-image: url('../../media/img/profile.jpg');
 
+    @media (min-width: 400px) {
+      @include circle(120px);
+    }
+
     @include onTabletSmall {
-      top: 20px;
-      right: 50px;
       @include circle(160px);
     }
 
     @include onTablet {
-      @include circle(250px);
-      top: 110px;
-      right: 80px;
+      @include circle(240px);
+      top: 56px;
+      right: 56px;
     }
 
     @include onLaptop {
-      position: static;
-      margin-top: 120px;
+      top: 26px;
+      right: 60px;
       @include circle (300px);
     }
 
