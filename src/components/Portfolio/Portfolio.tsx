@@ -36,7 +36,7 @@ const portfolioProjects: PortfolioProject[] = [
     id: '1',
     title: 'Job Platform',
     img: 'jobs',
-    descriptions: ['Job platform for candidates and companies, mobile first, responsive UI, more than 50 pages, 2 dashboards, 2 homepages, 16 steps register flow for candidates and more', 'Recommended path: candidates page => singup => register flow steps => candidates dashboard, pass payment with fake stripe card: 4242 4242 4242 4242 any end-date/CVC', 'Repository private'],
+    descriptions: ['Job platform for candidates and companies, mobile first, responsive UI, more than 50 pages, 2 dashboards, 2 homepages, 16 steps register flow for candidates and more', 'Recommended path: candidates page => signup => register flow steps => candidates dashboard, pass payment with fake stripe card: 4242 4242 4242 4242 any end-date/CVC', 'Repository private, contact me for more'],
     techstack: ['Next.js,', 'Typescript,', 'Scss,', 'Rest Api,', 'Axios,', 'Express.js,', 'PostgreSql'],
     demo: 'http://staging.videoworkers.com/',
     code: 'https://github.com/IoghiStudio/jobs-platform'
@@ -45,7 +45,7 @@ const portfolioProjects: PortfolioProject[] = [
     id: '2',
     title: 'Upwork Homepage',
     img: 'upwork',
-    descriptions: ['Upwork Homepage clean implementation, desktop version only'],
+    descriptions: ['Upwork clean implementation of the homepage, desktop version only'],
     techstack: ['React.js,', 'Typescript,', 'Scss'],
     demo: 'https://ioghistudio.github.io/upwork-homepage/',
     code: 'https://github.com/IoghiStudio/upwork-homepage'
@@ -130,56 +130,60 @@ export const Portfolio = () => {
           } = project;
 
           return (
-            <div key={id} className={classNames("portfolio__project", {
-              "portfolio__project--reversed": +id % 2 === 0
-            })}>
-              <div className={classNames(
-                "portfolio__image",
-                `portfolio__image--${img}`
-              )}/>
-
+            <div key={id} className={classNames("portfolio__project")}>
               <div className="portfolio__name">
                 {title}
               </div>
 
-              <div className="portfolio__descriptions">
-                {descriptions.map(description => (
-                  <div key={description} className="portfolio__description">
-                    {description}
+              <div className={classNames("portfolio__project-content", {
+                "portfolio__project-content--reversed": +id % 2 === 0
+              })}>
+                <div className={classNames(
+                  "portfolio__image",
+                  `portfolio__image--${img}`
+                )}/>
+
+                <div className="portfolio__project-details">
+                  <div className="portfolio__descriptions">
+                    {descriptions.map(description => (
+                      <div key={description} className="portfolio__description">
+                        {description}
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
 
-              <div className="portfolio__techstack">
-                <div className="portfolio__techstack-title">
-                  Techstack:
-                </div>
-
-                <div className="portfolio__techstack-list">
-                  {techstack.map(tech => (
-                    <div key={tech} className="portfolio__techstack-item">
-                      {tech}
+                  <div className="portfolio__techstack">
+                    <div className="portfolio__techstack-title">
+                      TechStack:
                     </div>
-                  ))}
+
+                    <div className="portfolio__techstack-list">
+                      {techstack.map(tech => (
+                        <div key={tech} className="portfolio__techstack-item">
+                          {tech}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="portfolio__links">
+                    <Link
+                      href={demo}
+                      target='_blank'
+                      className="portfolio__link portfolio__link--demo"
+                      >
+                      Demo
+                    </Link>
+
+                    <Link
+                      href={code}
+                      target='_blank'
+                      className="portfolio__link portfolio__link--code"
+                    >
+                      Code
+                    </Link>
+                  </div>
                 </div>
-              </div>
-
-              <div className="portfolio__links">
-                <Link
-                  href={demo}
-                  target='_blank'
-                  className="portfolio__link portfolio__link--demo"
-                  >
-                  Demo
-                </Link>
-
-                <Link
-                  href={code}
-                  target='_blank'
-                  className="portfolio__link portfolio__link--code"
-                >
-                  Code
-                </Link>
               </div>
             </div>
           )
