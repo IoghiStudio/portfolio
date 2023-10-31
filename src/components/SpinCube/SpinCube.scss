@@ -53,7 +53,7 @@
 
   &__git {
     background-image: url('../../media/cubeLogos/gitLogo.svg');
-    transform: rotate(-90deg) translate(-40px, 40px);
+    transform: rotate(-90deg) translate(-25px, 25px);
 
     @include onTabletSmall {
       transform: rotate(-90deg) translate(-40px, 40px);
