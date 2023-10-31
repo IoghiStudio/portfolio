@@ -29,6 +29,7 @@ interface PortfolioProject {
   techstack: string[]
   demo: string;
   code: string;
+  codeAvailable: boolean;
 };
 
 const portfolioProjects: PortfolioProject[] = [
@@ -39,16 +40,18 @@ const portfolioProjects: PortfolioProject[] = [
     descriptions: ['Job platform for candidates and companies, mobile first, responsive UI, more than 50 pages, 2 dashboards, 2 homepages, 16 steps register flow for candidates and more', 'Recommended path: candidates page => signup => register flow steps => candidates dashboard, pass payment with fake stripe card: 4242 4242 4242 4242 any end-date/CVC', 'Repository private, contact me for more'],
     techstack: ['Next.js,', 'Typescript,', 'Scss,', 'Rest Api,', 'Axios,', 'Express.js,', 'PostgreSql'],
     demo: 'http://staging.videoworkers.com/',
-    code: 'https://github.com/IoghiStudio/jobs-platform'
+    code: 'https://github.com/IoghiStudio/jobs-platform',
+    codeAvailable: false
   },
   {
     id: '2',
     title: 'Apple Store',
     img: 'apple',
-    descriptions: ['Online store with apple products, responsive UI', 'Few functionalities like add to cart/favorites, pagination, product details'],
+    descriptions: ['Online store with apple products, responsive UI, few functionalities like add to cart/favorites, pagination, product details'],
     techstack: ['React.js,', 'Typescript,', 'Scss'],
     demo: 'https://ioghistudio.github.io/product-catalog/',
-    code: 'https://github.com/IoghiStudio/product-catalog'
+    code: 'https://github.com/IoghiStudio/product-catalog',
+    codeAvailable: true
   },
   {
     id: '3',
@@ -57,7 +60,8 @@ const portfolioProjects: PortfolioProject[] = [
     descriptions: ['Upwork clean implementation of the homepage, desktop version only'],
     techstack: ['React.js,', 'Typescript,', 'Scss'],
     demo: 'https://ioghistudio.github.io/upwork-homepage/',
-    code: 'https://github.com/IoghiStudio/upwork-homepage'
+    code: 'https://github.com/IoghiStudio/upwork-homepage',
+    codeAvailable: true
   },
 ];
 
@@ -136,6 +140,7 @@ export const Portfolio = () => {
             techstack,
             demo,
             code,
+            codeAvailable
           } = project;
 
           return (
@@ -187,7 +192,12 @@ export const Portfolio = () => {
                     <Link
                       href={code}
                       target='_blank'
-                      className="portfolio__link portfolio__link--code"
+                      className={classNames("portfolio__link",
+                        "portfolio__link--code",
+                        {
+                          "portfolio__link--disabled": !codeAvailable
+                        }
+                      )}
                     >
                       Code
                     </Link>
