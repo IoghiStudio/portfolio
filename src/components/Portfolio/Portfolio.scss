@@ -112,11 +112,19 @@
       }
     }
 
+    &--apple {
+      background-image: url('../../media/projects/apple/apple-1.png');
+
+      @include onTablet {
+        margin-left: 20px;
+      }
+    }
+
     &--upwork {
       background-image: url('../../media/projects/upwork/upwork-0.png');
 
       @include onTablet {
-        margin-left: 20px;
+        margin-right: 20px;
       }
     }
   }

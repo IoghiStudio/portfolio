@@ -43,6 +43,15 @@ const portfolioProjects: PortfolioProject[] = [
   },
   {
     id: '2',
+    title: 'Apple Store',
+    img: 'apple',
+    descriptions: ['Online store with apple products, responsive UI', 'Few functionalities like add to cart/favorites, pagination, product details'],
+    techstack: ['React.js,', 'Typescript,', 'Scss'],
+    demo: 'https://ioghistudio.github.io/product-catalog/',
+    code: 'https://github.com/IoghiStudio/product-catalog'
+  },
+  {
+    id: '3',
     title: 'Upwork Homepage',
     img: 'upwork',
     descriptions: ['Upwork clean implementation of the homepage, desktop version only'],
