@@ -106,7 +106,7 @@ export const About = () => {
             </span>
 
             <span className="about__text-section">
-              Passionate about technology, I am committed to continuous self-improvement and aspire to become a great Software Engineer.
+              As a technology fanatic, I am committed to continuous self-improvement and aspire to become a great Software Engineer.
             </span>
           </p>
         </TagWrapper>

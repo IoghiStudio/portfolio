@@ -33,16 +33,16 @@ interface PortfolioProject {
 };
 
 const portfolioProjects: PortfolioProject[] = [
-  {
-    id: '1',
-    title: 'Job Platform',
-    img: 'jobs',
-    descriptions: ['Job platform for candidates and companies, mobile first, responsive UI, more than 50 pages, 2 dashboards, 2 homepages, 16 steps register flow for candidates and more', 'Recommended path: candidates => signup => register flow => candidates dashboard, pass payment with fake stripe card: 4242 4242 4242 4242 any end-date/CVC', 'Repository private, contact me for more'],
-    techstack: ['Next.js,', 'Typescript,', 'Scss,', 'Rest Api,', 'Axios,', 'Express.js,', 'PostgreSql'],
-    demo: 'http://staging.videoworkers.com/',
-    code: 'https://github.com/IoghiStudio/jobs-platform',
-    codeAvailable: false
-  },
+  // {
+  //   id: '1',
+  //   title: 'Job Platform',
+  //   img: 'jobs',
+  //   descriptions: ['Job platform for candidates and companies, mobile first, responsive UI, more than 50 pages, 2 dashboards, 2 homepages, 16 steps register flow for candidates and more', 'Recommended path: candidates => signup => register flow => candidates dashboard, pass payment with fake stripe card: 4242 4242 4242 4242 any end-date/CVC', 'Repository private, contact me for more'],
+  //   techstack: ['Next.js,', 'Typescript,', 'Scss,', 'Rest Api,', 'Axios,', 'Express.js,', 'PostgreSql'],
+  //   demo: 'http://staging.videoworkers.com/',
+  //   code: 'https://github.com/IoghiStudio/jobs-platform',
+  //   codeAvailable: false
+  // },
   {
     id: '2',
     title: 'Apple Store',
