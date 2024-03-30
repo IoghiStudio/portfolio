@@ -33,16 +33,16 @@ interface PortfolioProject {
 };
 
 const portfolioProjects: PortfolioProject[] = [
-  // {
-  //   id: '1',
-  //   title: 'Job Platform',
-  //   img: 'jobs',
-  //   descriptions: ['Job platform for candidates and companies, mobile first, responsive UI, more than 50 pages, 2 dashboards, 2 homepages, 16 steps register flow for candidates and more', 'Recommended path: candidates => signup => register flow => candidates dashboard, pass payment with fake stripe card: 4242 4242 4242 4242 any end-date/CVC', 'Repository private, contact me for more'],
-  //   techstack: ['Next.js,', 'Typescript,', 'Scss,', 'Rest Api,', 'Axios,', 'Express.js,', 'PostgreSql'],
-  //   demo: 'http://staging.videoworkers.com/',
-  //   code: 'https://github.com/IoghiStudio/jobs-platform',
-  //   codeAvailable: false
-  // },
+  {
+    id: '1',
+    title: 'Job Platform',
+    img: 'jobs',
+    descriptions: ['I am the Frontend Engineer of the VideoWorkers platform. Revolutionary idea to connect companies and employees around the world, splitted into companies/candidates as a verified company creating announces and sending custom offers also as candidate apply to jobs and receive offers, chat/notification/subscription/invoices/filtering systems and many more, 80% of the platform is after subscription for candidates or after document verify as a company.'],
+    techstack: ['Next.js,', 'Typescript,', 'Scss,', 'Rest Api'],
+    demo: 'https://videoworkers.com/',
+    code: 'https://github.com/IoghiStudio/jobs-platform',
+    codeAvailable: false
+  },
   {
     id: '2',
     title: 'Apple Store',
@@ -189,18 +189,22 @@ export const Portfolio = () => {
                       Demo
                     </Link>
 
-                    <Link
-                      href={code}
-                      target='_blank'
-                      className={classNames("portfolio__link",
-                        "portfolio__link--code",
-                        {
-                          "portfolio__link--disabled": !codeAvailable
-                        }
-                      )}
-                    >
-                      Code
-                    </Link>
+                    {codeAvailable ? (
+                      <Link
+                        href={codeAvailable ? new URL(code) : ''}
+                        target='_blank'
+                        className={classNames("portfolio__link","portfolio__link--code")}
+                      >
+                        Code
+                      </Link>
+                    ) : (
+                      <div
+                        className={classNames("portfolio__link","portfolio__link--disabled")}
+                      >
+                        Code
+                      </div>
+                    )}
+
                   </div>
                 </div>
               </div>
