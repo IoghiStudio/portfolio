@@ -97,7 +97,10 @@ export const About = () => {
         <TagWrapper tagType={TagType.P}>
           <p className="about__text">
             <span className="about__text-section">
-              Passionate Software Developer with 4 years of experience.
+              Passionate Software Engineer with 6 years of involvement in software development, including 1.5 years of professional experience specializing in Frontend Development.
+            </span>
+
+            <span className="about__text-section">
               My background in Game Development and 3D Art has equipped me with a unique skill set that combines programming and design, enabling me to craft exceptional web applications.
             </span>
 
