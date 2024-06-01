@@ -97,15 +97,19 @@ export const About = () => {
         <TagWrapper tagType={TagType.P}>
           <p className="about__text">
             <span className="about__text-section">
-              Passionate Software Engineer with 6 years of involvement in software development, including 2 years of professional experience specializing in Frontend Development.
+              Experienced Software Engineer with 6 years of robust programming experience, focusing on Frontend Development for the past 4 years. Showcases 2 years of proven success in commercial Frontend Development, delivering impactful solutions.
             </span>
 
             <span className="about__text-section">
-              My background in Game Development and 3D Art has equipped me with a unique skill set that combines programming and design, enabling me to craft exceptional web applications.
+              Acknowledged for my clear communication, exceptional organizational skills, and meticulous attention to detail.
             </span>
 
             <span className="about__text-section">
-              I’m an excellent communicator and problem solver, and am highly organized and detail-oriented. I am looking for new opportunities to apply my skills and knowledge to help create successful projects.
+              Combining expertise in Game Development and 3D Art, I offer a unique fusion of technical proficiency and creative design, driving the development of exceptional web applications.
+            </span>
+
+            <span className="about__text-section">
+              Excited to leverage my expertise to contribute to the creation of impactful projects within your team.
             </span>
 
             <span className="about__text-section">
