@@ -38,12 +38,6 @@ const routesData: RouteData[] = [
     path: 'portfolio'
   },
   {
-    id: 4,
-    name: 'Blog',
-    routePath: '/blog/',
-    path: 'blog'
-  },
-  {
     id: 5,
     name: 'Contact',
     routePath: '/contact/',
